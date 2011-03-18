@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<script>
+					function ajax()
+					{
+					
+					var ajaxRequest;
+					try{
+						ajaxRequest=new XMLHttpRequest();
+
+					}
+				
+					catch(e)
+					{
+						try{
+							ajaxRequest=new ActiveXObject("Msxml2.XMLHTTP");
+						}
+
+						catch(e)
+						{
+							try{
+								ajaxRequest=new ActiveXObject("Microsoft.XMLHTTP");
+							}
+							catch(e)
+							{
+							}
+						}
+					}
+					ajaxRequest.onreadystatechange=function()
+					{
+						if(ajaxRequest.readyState==4)
+							document.form.Time.value=ajaxRequest.responseText;
+
+					}
+
+					ajaxRequest.open("GET","ajax.php",true);
+					
+					ajaxRequest.send(null);
+				}
+							</script>
+
+	</head>
+
+<body>
+	<form name="form">
+		<input type="text" onChange="ajax();" name="Name">
+		<br />
+		<input type="text" name="Time">
+	</form>
+</body>
+</html>
+

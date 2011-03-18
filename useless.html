@@ -1,0 +1,370 @@
+<html>
+<head>
+<title>
+	Useless
+</title>
+<style>
+div.warea
+{
+	margin:auto;
+	position:absolute;
+	top:45%;
+	left:25%;
+	width:50%;
+	height:50%;
+	text-align:center;
+}
+input.box
+{
+	width:420px;
+	background-color:#FFFFF3;
+	height:30px;
+	z-index:2;
+}
+
+#submit
+{
+	width:100px;
+	height:30px;
+	font-size:15px;
+	font-family:Verdana;
+	z-index:1;
+}
+#selectbox
+{
+	position:relative;
+	width:600px;
+	height:250px;
+	top:20%;
+	left:25%;
+	z-index:3;	
+	cursor:default;
+	opacity:0.75;
+	visibility:hidden;
+	
+
+}
+
+
+.list
+{
+	position:absolute;
+	width:450px;
+	height:200px;
+	right:0;
+	top:0;
+	border:1px solid #000000;
+	background-color:black;
+	overflow:auto;
+	-moz-border-radius: 30px ;
+	-webkit-border-radius: 30px;
+	-khtml-border-radius: 30px;
+	border-radius: 30px;
+
+	
+}
+#close
+{
+	position:absolute;
+	width:15px;
+	height:15px;
+	right:0;
+	top:0;
+	border:1px solid black;
+	background-color:white;
+	z-index:5;
+	text-align:center;
+}
+#maincolumn
+{
+	position:absolute;
+	width:150px;
+	height:300px;
+	left:0;
+	top:0;
+	border:1px solid #000000;
+	background-color:black;
+	overflow:auto;
+	-moz-border-radius: 30px ;
+	-webkit-border-radius: 30px;
+	-khtml-border-radius: 30px;
+	border-radius: 30px;
+
+}
+
+#initial
+{
+	text-align:center;
+	visibility:hidden;
+}
+#general
+{
+	visibility:hidden;
+}
+#qanda
+{
+	visibility:hidden;
+}
+.listtd
+{
+	width:85px;
+	height:35px;
+}
+.maintd
+{
+	width:150px;
+}
+.move
+{
+	position:absolute;
+	left:20px;
+	top:8px;
+}
+	
+#movedown
+{
+	position:absolute;
+	top:20px;
+}
+table
+{
+	border-collapse:collapse;
+	}
+
+font 
+{ 
+	color:white;
+	font-size:20;
+}
+
+#closefont 
+{
+	position:relative;
+	bottom:3px;
+	font-family:arial;
+	font-size:17;
+	color:black;
+}	
+
+#logo
+{
+	font-family: arial;
+	text-align:center;
+	-moz-box-shadow: 3px 3px 2px #000;
+	
+	-webkit-box-shadow: 3px 3px 2px #000;
+	
+	box-shadow: 3px 3px 2px #000;
+
+
+}
+#u
+{
+	color:#736AFF;
+	font-size:75;
+	font-family:arial;	
+}
+#s1
+{
+	color:#736AFF;
+	font-size:75;
+}
+#e1
+{
+	color:#736AFF;
+	font-size:75;
+}
+#l
+{
+	color:#736AFF;
+	font-size:75;
+}
+#e2
+{
+	color:#736AFF;
+	font-size:75;
+}
+#s2
+{
+	color:#736AFF;
+	font-size:75;
+}
+#s3
+{
+	color:#736AFF;
+	font-size:75;
+}
+.text
+{
+	color:black;
+	font-size:30;
+}
+</style>
+	<script type="text/javascript"> 
+function showbox()
+{
+	document.getElementById("selectbox").style.visibility='visible';
+	document.getElementById("initial").style.visibility='visible';//the child property of being hidden is not overridden when the parent div is made visible
+}
+function display(str)
+{
+		var temp=document.getElementsByClassName('list');
+		for(i=0;i<temp.length;i++)
+			temp[i].style.visibility='hidden';	
+		if(str=='general')
+			document.getElementById('general').style.visibility='visible';
+		if(str=='qanda')
+			document.getElementById('qanda').style.visibility='visible';
+			
+		
+
+}
+function redirect(str)
+{	
+	var query=document.getElementById('query').value;
+	if(str=='google')		
+		window.location='http://www.google.com/search?hl=en&q='+query;
+	else if(str=='bing')
+		window.location='http://www.bing.com/search?hl=en&q='+query;
+	else if(str=='yahoo')
+	  window.location='http://search.yahoo.com/search;_ylt=AiXHhc8VTWKBEnQlJ8fBQHabvZx4?vc=&fp_ip=in&p='+query+'&toggle=1&cop=mss&ei=UTF-8&fr=yfp-t-701';	     else if(str=='aol')
+	  	window.location='http://search.aol.com/aol/search?s_it=searchbox.webhome&v_t=na&q='+query;	  
+	else if(str=='kosmix')
+		window.location='http://www.kosmix.com/topic/'+query+'?';
+	else if(str=='blekko')
+		window.location='http://www.blekko.com/ws/'+query;
+	else if(str=='altavista')
+		window.location='http://www.altavista.com/web/results?fr=altavista&itag=ody&q='+query+'&kgs=0&kls=0';
+	else if(str=='duckduckgo')
+		window.location='http://www.duckduckgo.com/?q='+query;
+	else if(str=='answers')
+		window.location='http://www.answers.com/topic/'+query;
+	else if(str=='wolfram')
+		window.location='http://www.wolframalpha.com/input/?i='+query;
+	else if(str=='ask')
+		window.location='http://www.ask.com/web?q='+query+'&search=&qsrc=0&o=0&l=dir';
+	else if(str=='trueknowledge')
+		window.location='http://www.trueknowledge.com/q/'+query;
+}
+</script>
+</head>
+
+<body>
+	<div id="logo">
+		<font id="u">U<font class="text">.seless</font></font>
+		<font id="s1">S<font class="text">.earch</font></font>
+		<font id="e1">E<font class="text">.xperiment</font></font>
+		<font id="l">L<font class="text">.ets</font></font>
+		<font id="e2">E<font class="text">.ngines</font></font>
+		<font id="s2">S<font class="text">.earch,</font></font>
+		<font id="s3">S<font class="text">.tupid.</font></font>
+	</div>	
+		<div name="warea" class="warea">
+			<input type="text" class="box" name="query" id="query" onkeydown="if(window.event.keyCode==13)showbox();">
+			<br/>
+		<br/>
+		<input type="submit" id="submit" value="S." onclick="showbox();">
+		</div>
+<div  id="selectbox">	
+	<div id="close" onmouseover="{this.style.background='#C0C0C0'; document.getElementById('closefont').style.fontSize='15';}" onmouseout="{this.style.background='white'; document.getElementById('closefont').style.fontSize='17';}" onclick="{document.getElementById('selectbox').style.visibility='hidden';var temp=document.getElementsByClassName('list');
+		for(i=0;i<temp.length;i++)
+			temp[i].style.visibility='hidden';	}">
+			<font id="closefont">x</font>
+		</div>
+
+	<div id="maincolumn">	
+	<div id="movedown">
+	<table>
+	<tr>
+	<td class="maintd" onclick="display('general');" onmouseover="this.style.background='#808080'" onmouseout="this.style.background='black'"><font>General</font></td>
+	
+	</tr>
+
+        	<tr>
+      <td class="maintd" onclick="display('qanda');" onmouseover="this.style.background='#808080'" onmouseout="this.style.background='black'"><font>Q&A<font></td>
+	</tr>
+	<tr>
+      <td class="maintd" onclick="alert('clicked open source');" onmouseover="this.style.background='#808080'" onmouseout="this.style.background='black'"><font>Open Source<font></td>
+	</tr>
+
+	<tr>
+      <td class="maintd" onclick="alert('clicked topical');" onmouseover="this.style.background='#808080'" onmouseout="this.style.background='black'"><font>Topical</font></td>
+	</tr>
+	<tr>
+      <td class="maintd" onclick="alert('clicked realtime');" onmouseover="this.style.background='#808080'" onmouseout="this.style.background='black'"><font>Realtime</font></td>
+	</tr>
+	<tr>
+      <td class="maintd" onclick="alert('clicked directories');" onmouseover="this.style.background='#808080'" onmouseout="this.style.background='black'"><font>Directories</font></td>
+	</tr>
+	<tr>
+      <td class="maintd" onclick="alert('clicked meta');" onmouseover="this.style.background='#808080'" onmouseout="this.style.background='black'"><font>Meta</font></td>
+	</tr>
+	 <td class="maintd" onclick="alert('clicked Source Code');" onmouseover="this.style.background='#808080'" onmouseout="this.style.background='black'"><font>Source Code</font></td>
+	</tr>
+	<td class="maintd" onclick="alert('clicked Blog');" onmouseover="this.style.background='#808080'" onmouseout="this.style.background='black'"><font>Blog</font></td>
+	</tr>
+
+</table>
+</div>
+	</div>		
+		<div id="initial" class="list">
+		<font> Select a category.</font>
+		</div>
+	
+		<div id="general" class="list">
+		<div class="move">
+		<table>
+		<tr>
+		<td class="listtd" onmouseover="{document.getElementById('Kosmix').style.color='#808080'; document.getElementById('Kosmix').style.fontSize=23;}" onmouseout="{document.getElementById('Kosmix').style.color='white';document.getElementById('Kosmix').style.fontSize=20;}" onclick="redirect('kosmix')"><font id='Kosmix'>Kosmix</font></td>
+
+		<td class="listtd" onmouseover="{document.getElementById('altavista').style.color='#808080'; document.getElementById('altavista').style.fontSize=23;}" onmouseout="{document.getElementById('altavista').style.color='white';document.getElementById('altavista').style.fontSize=20;}" onclick="redirect('altavista');"><font id='altavista'>Altavista</font></td>		
+</tr>
+
+
+
+	<tr>
+		<td class="listtd" onmouseover="{document.getElementById('Blekko').style.color='#808080'; document.getElementById('Blekko').style.fontSize=23;}" onmouseout="{document.getElementById('Blekko').style.color='white';document.getElementById('Blekko').style.fontSize=20;}" onclick="redirect('blekko')"><font id='Blekko'>Blekko</font></td>
+		<td class="listtd "onmouseover="{document.getElementById('yahoo').style.color='#808080'; document.getElementById('yahoo').style.fontSize=23;}" onmouseout="{document.getElementById('yahoo').style.color='white';document.getElementById('yahoo').style.fontSize=20;}" onclick="redirect('yahoo')"><font id='yahoo'>Yahoo!</font></td>
+	
+	</tr>
+	<tr>
+		<td class="listtd "onmouseover="{document.getElementById('google').style.color='#808080'; document.getElementById('google').style.fontSize=23;}" onmouseout="{document.getElementById('google').style.color='white';document.getElementById('google').style.fontSize=20;}" onclick="redirect('google')"><font id='google'>Google</font></td>
+			<td class="listtd "onmouseover="{document.getElementById('bing').style.color='#808080'; document.getElementById('bing').style.fontSize=23;}" onmouseout="{document.getElementById('bing').style.color='white';document.getElementById('bing').style.fontSize=20;}" onclick="redirect('bing')"><font id='bing'>Bing</font></td>
+	
+	</tr>
+	<td class="listtd "onmouseover="{document.getElementById('duckduckgo').style.color='#808080'; document.getElementById('duckduckgo').style.fontSize=21;}" onmouseout="{document.getElementById('duckduckgo').style.color='white';document.getElementById('duckduckgo').style.fontSize=20;}" onclick="redirect('duckduckgo')"><font id='duckduckgo'>Duck Duck Go</font></td>
+
+
+	<td class="listtd "onmouseover="{document.getElementById('aol').style.color='#808080'; document.getElementById('aol').style.fontSize=23;}" onmouseout="{document.getElementById('aol').style.color='white';document.getElementById('aol').style.fontSize=20;}" onclick="redirect('aol')"><font id='aol'>AOL</font></td>
+		
+	</tr>
+	
+      	</table>
+	</div>
+	</div>
+	<div id="qanda" class="list">
+		<div class="move">
+		<table>
+		<tr>
+		<td class="listtd" onmouseover="{document.getElementById('wolfram').style.color='#808080'; document.getElementById('wolfram').style.fontSize=21;}" onmouseout="{document.getElementById('wolfram').style.color='white';document.getElementById('wolfram').style.fontSize=20;}" onclick="redirect('wolfram')"><font id='wolfram'>Wolfram Alpha</font></td>
+
+		<td class="listtd" onmouseover="{document.getElementById('ask').style.color='#808080'; document.getElementById('ask').style.fontSize=23;}" onmouseout="{document.getElementById('ask').style.color='white';document.getElementById('ask').style.fontSize=20;}" onclick="redirect('ask');"><font id='ask'>Ask.com</font></td>		
+</tr>
+
+
+
+	<tr>
+		<td class="listtd" onmouseover="{document.getElementById('answers').style.color='#808080'; document.getElementById('answers').style.fontSize=21;}" onmouseout="{document.getElementById('answers').style.color='white';document.getElementById('answers').style.fontSize=20;}" onclick="redirect('answers')"><font id='answers'>Answers.com</font></td>
+			<td class="listtd" onmouseover="{document.getElementById('trueknowledge').style.color='#808080'; document.getElementById('trueknowledge').style.fontSize=21;}" onmouseout="{document.getElementById('trueknowledge').style.color='white';document.getElementById('trueknowledge').style.fontSize=20;}" onclick="redirect('trueknowledge')"><font id='trueknowledge'>True Knowledge</font></td>
+			</tr>
+	
+      	</table>
+	</div>
+	</div>
+
+	</div>
+	
+</body>
+</html>
+
+

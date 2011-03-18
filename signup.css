@@ -1,0 +1,82 @@
+p
+{
+color: green;
+text-indent: 80px;
+font-weight: 150;
+font-size: 19px
+}
+
+h1
+{
+color: olivedrab;
+font-family:Arial;
+text-indent: 20px;
+padding-bottom: 1px;
+border-bottom-width: 5px;
+border-bottom-color: seagreen;
+border-left-width: 40px;
+border-left-color: seagreen;
+border-bottom-style: solid;
+border-left-style: solid
+}
+
+
+label
+{
+text-indent: 100px;
+font-family: lucidaconsole;
+width: 14em;
+float: left;
+text-align: left;
+margin-right: 0.5em;
+display: block
+}
+
+
+input focus,textarea:focus
+{
+background-color: #ffffaa;
+height: 40
+}
+
+.submit input
+{
+background: #222 url(b4.jpg) repeat-x;
+display: inline-block;
+padding: 5px 5px;
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-box-shadow: 0 1px 3px #999;
+-webkit-box-shadow: 0 1px 3px #999;
+text-shadow: 0 -1px 1px #222;
+border-bottom: 1px solid #222;
+position: relative;
+cursor: pointer;
+}
+
+.tb5 input{
+	background: url(b3.jpg) no-repeat top left;
+	height: 22px;
+	width: 230px;
+}
+.tb5a {
+	border: 10px;
+	width:220px;
+	margin-top:3px;
+}
+
+.trouble{
+position:relative;
+bottom:590px;
+right:280px;
+}
+.radio{
+position:relative;
+left:60px;
+}
+
+
