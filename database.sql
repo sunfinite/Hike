@@ -77,8 +77,6 @@ INSERT INTO `member` (`MID`, `NAME`, `SEX`, `EMAIL_ID`, `MOBILE_NO`, `PASSWORD`)
 (00111, 'e', 'M', 'e', 0, 'e'),
 (00110, 'd', 'M', 'd', 0, 'd'),
 (00109, 'shashi', 'M', 's', 2, 's'),
-(00108, 'swaroop', 'M', '25.swaroop@gmail.com', 2, 'a'),
-(00107, 'Sunil', 'M', 'sunil3590@gmail.com', 9916778133, 'sunil'),
 (00114, 'h', 'M', 'h', 0, 'h'),
 (00115, 'i', 'M', 'i', 0, 'i'),
 (00116, 'q', 'M', 'q', 0, 'q'),

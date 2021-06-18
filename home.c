@@ -35,8 +35,8 @@ void input()
 
 void calculate()
 {
-	d2=d+3;											//this is really lame sunny, i donno y u want me to do this
-	d41=d+3;											//this is sooo far away from simulating reality, nothing more than fancy
+	d2=d+3; //this is really lame sunny, i donno y u want me to do this
+	d41=d+3;//this is sooo far away from simulating reality, nothing more than fancy
 	d42=d+(1.5)+(2.12)+(2.12);					//(1.5)^2 + (1.5)^2 = (2.12)^2
 	d43=d+(1.5)+(2.12)+(2.12)+(2.12);
 	c2=d2/(2*d)*100;
